@@ -1,23 +1,16 @@
 #include <iostream>
 #include <stack>
 #include <string>
-#include <vector>
 #include <sstream>
 
 using namespace std;
 
 void calc(string inputstr) {
 
-    stack<string> calc;
-    vector<string> input;
-
     stringstream ss(inputstr);
-    string wordin;
-    while (ss >> wordin) {
-        input.push_back(wordin);
-    }
+    stack<string> calc;
 
-    for (string instr: input) {
+    for (string instr; ss >> instr; ) {
         calc.push(instr);
 
         // For each input value, we exhaust the stack
